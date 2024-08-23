@@ -1,0 +1,356 @@
+  EXERCISE-3
+
+Implementation of Image Enhancement techniques like sharpening and 
+thresholding
+Aim:
+ To implement image enhancement techniques such as brightness and contrast 
+adjustment, image sharpening and image thresholding.
+Software Required:
+• Anaconda
+Task 1: To adjust the brightness and contrast of the images to enhance the visual appeal 
+and effectiveness. 
+Procedure:
+Code:
+Task 2: To perform image sharpening to enhance the edges and fine details in an image.
+Procedure:
+Code:
+Task 3: To perform image segmentation using simple, adaptive and Otsu thresholding 
+methods.
+Procedure:
+Code:
+
+----------------------
+
+Task 1: Adjust Brightness and Contrast of Images
+Procedure
+Open Spyder and create a new Python project.
+Create a new Python file within your project.
+Import necessary libraries: import cv2 and from matplotlib import pyplot as plt.
+Load an image.
+Adjust the brightness and contrast of the image.
+Display the original and adjusted images.
+
+Code
+import cv2
+from matplotlib import pyplot as plt
+
+# Load an image
+image = cv2.imread('image.png')
+
+# Adjust brightness and contrast
+alpha = 1.5  # Contrast control (1.0-3.0)
+beta = 50    # Brightness control (0-100)
+
+adjusted = cv2.convertScaleAbs(image, alpha=alpha, beta=beta)
+
+# Display images
+titles = ['Original Image', 'Adjusted Image']
+images = [image, adjusted]
+
+for i in range(2):
+    plt.subplot(1, 2, i+1)
+    plt.imshow(cv2.cvtColor(images[i], cv2.COLOR_BGR2RGB))
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+
+plt.show()
+Task 2: Perform Image Sharpening
+Procedure
+Open Spyder and create a new Python project.
+Create a new Python file within your project.
+Import necessary libraries: import cv2 and from matplotlib import pyplot as plt.
+Load an image.
+Apply an image sharpening kernel.
+Display the original and sharpened images.
+
+Code
+import cv2
+from matplotlib import pyplot as plt
+import numpy as np
+
+# Load an image
+image = cv2.imread('image.png')
+
+# Create a sharpening kernel
+kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+
+# Apply the sharpening kernel to the image
+sharpened = cv2.filter2D(image, -1, kernel)
+
+# Display images
+titles = ['Original Image', 'Sharpened Image']
+images = [image, sharpened]
+
+for i in range(2):
+    plt.subplot(1, 2, i+1)
+    plt.imshow(cv2.cvtColor(images[i], cv2.COLOR_BGR2RGB))
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+
+plt.show()
+
+Task 3: Perform Image Segmentation Using Thresholding
+Procedure
+Open Spyder and create a new Python project.
+Create a new Python file within your project.
+Import necessary libraries: import cv2 and from matplotlib import pyplot as plt.
+Load an image and convert it to grayscale.
+Apply simple thresholding, adaptive thresholding, and Otsu's thresholding.
+Display the original and thresholded images.
+
+Code
+import cv2
+from matplotlib import pyplot as plt
+
+# Load an image
+image = cv2.imread('image.png')
+
+# Convert to grayscale
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Apply simple thresholding
+_, simple_thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+# Apply adaptive thresholding
+adaptive_thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+
+# Apply Otsu's thresholding
+_, otsu_thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+# Display images
+titles = ['Original Image', 'Simple Thresholding', 'Adaptive Thresholding', "Otsu's Thresholding"]
+images = [gray, simple_thresh, adaptive_thresh, otsu_thresh]
+
+for i in range(4):
+    plt.subplot(2, 2, i+1)
+    plt.imshow(images[i], cmap='gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+
+plt.show()
+
+
+
+EXERCISE-4
+
+Implementation of Image Enhancement in Spatial Domain using Histogram 
+Processing
+Aim:
+ To implement image enhancement in spatial domain using histogram processing such as 
+histogram equalization and histogram matching.
+Software Required:
+• Anaconda
+Task 1: To verify the histograms of dark, light, low contrast and high contrast images.
+Procedure:
+Code:
+Task 2: To perform histogram equalization to enhance the contrast of the image.
+Procedure:
+Code:
+Task 3: To perform histogram matching to adjust the histogram of an image to match a 
+specified target histogram.
+Procedure:
+Code:
+-------------------------------
+Task 1: Verify the Histograms of Dark, Light, Low Contrast, and High Contrast Images
+Procedure
+Open Spyder and create a new Python project.
+Create a new Python file within your project.
+Import necessary libraries: import cv2, import numpy as np, and from matplotlib import pyplot as plt.
+Load dark, light, low contrast, and high contrast images.
+Compute the histograms of the images.
+Display the images and their corresponding histograms.
+
+Code
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+# Load images
+dark_image = cv2.imread('dark_image.png', 0)
+light_image = cv2.imread('light_image.png', 0)
+low_contrast_image = cv2.imread('low_contrast_image.png', 0)
+high_contrast_image = cv2.imread('high_contrast_image.png', 0)
+
+images = [dark_image, light_image, low_contrast_image, high_contrast_image]
+titles = ['Dark Image', 'Light Image', 'Low Contrast Image', 'High Contrast Image']
+
+# Display images and their histograms
+for i in range(4):
+    plt.subplot(4, 2, 2*i+1)
+    plt.imshow(images[i], cmap='gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+
+    plt.subplot(4, 2, 2*i+2)
+    plt.hist(images[i].ravel(), 256, [0, 256])
+    plt.title('Histogram')
+
+plt.show()
+
+Task 2: Perform Histogram Equalization
+Procedure
+Open Spyder and create a new Python project.
+Create a new Python file within your project.
+Import necessary libraries: import cv2 and from matplotlib import pyplot as plt.
+Load an image and convert it to grayscale.
+Apply histogram equalization.
+Display the original and equalized images along with their histograms.
+
+Code
+import cv2
+from matplotlib import pyplot as plt
+
+# Load an image
+image = cv2.imread('image.png', 0)
+
+# Apply histogram equalization
+equalized_image = cv2.equalizeHist(image)
+
+# Display original and equalized images and their histograms
+titles = ['Original Image', 'Equalized Image']
+images = [image, equalized_image]
+
+for i in range(2):
+    plt.subplot(2, 2, 2*i+1)
+    plt.imshow(images[i], cmap='gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+
+    plt.subplot(2, 2, 2*i+2)
+    plt.hist(images[i].ravel(), 256, [0, 256])
+    plt.title('Histogram')
+
+plt.show()
+
+Task 3: Perform Histogram Matching
+Procedure
+Open Spyder and create a new Python project.
+Create a new Python file within your project.
+Import necessary libraries: import cv2, import numpy as np, and from matplotlib import pyplot as plt.
+Load the source and target images and convert them to grayscale.
+Define a function to perform histogram matching.
+Apply histogram matching to adjust the source image to match the histogram of the target image.
+Display the source, target, and matched images along with their histograms.
+
+Code
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+def histogram_matching(source, template):
+    source_hist, bins = np.histogram(source.flatten(), 256, [0, 256])
+    template_hist, bins = np.histogram(template.flatten(), 256, [0, 256])
+    
+    source_cdf = source_hist.cumsum()
+    source_cdf_normalized = source_cdf * (template_hist.max() / source_cdf.max())
+
+    template_cdf = template_hist.cumsum()
+    
+    lookup_table = np.zeros(256)
+    g_j = 0
+    for g_i in range(256):
+        while template_cdf[g_j] < source_cdf[g_i] and g_j < 255:
+            g_j += 1
+        lookup_table[g_i] = g_j
+
+    matched = cv2.LUT(source, lookup_table)
+    return matched
+
+# Load source and target images
+source_image = cv2.imread('source_image.png', 0)
+target_image = cv2.imread('target_image.png', 0)
+
+# Perform histogram matching
+matched_image = histogram_matching(source_image, target_image)
+
+# Display images and their histograms
+titles = ['Source Image', 'Target Image', 'Matched Image']
+images = [source_image, target_image, matched_image]
+
+for i in range(3):
+    plt.subplot(3, 2, 2*i+1)
+    plt.imshow(images[i], cmap='gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+
+    plt.subplot(3, 2, 2*i+2)
+    plt.hist(images[i].ravel(), 256, [0, 256])
+    plt.title('Histogram')
+
+plt.show()
+
+
+
+
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+def image_negative(image):
+    return 255 - image
+
+def log_transform(image, c=1):
+    return c * np.log1p(image.astype(np.float64))
+
+def gamma_transform(image, gamma, c=1):
+    return c * np.power(image.astype(np.float64) / 255, gamma)
+
+# Load the example image
+image_path = r"C:\Users\shris\Downloads\high_contrast_image.jpeg"
+image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+
+# Apply transformations
+negative_image = image_negative(image)
+log_image = log_transform(image)
+log_image = np.uint8(log_image / log_image.max() * 255)
+gamma_image = gamma_transform(image, gamma=2.2)
+gamma_image = np.uint8(gamma_image / gamma_image.max() * 255)
+
+# Display the results
+plt.figure(figsize=(12, 6))
+plt.subplot(141), plt.imshow(image, cmap='gray'), plt.title('Original Image')
+plt.subplot(142), plt.imshow(negative_image, cmap='gray'), plt.title('Negative Image')
+plt.subplot(143), plt.imshow(log_image, cmap='gray'), plt.title('Log Transformed Image')
+plt.subplot(144), plt.imshow(gamma_image, cmap='gray'), plt.title('Gamma Transformed Image')
+plt.show()
+
+
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+def contrast_stretching(image, r1, s1, r2, s2):
+    def pixel_val(p):
+        if p < r1:
+            return (s1 / r1) * p
+        elif r1 <= p <= r2:
+            return ((s2 - s1) / (r2 - r1)) * (p - r1) + s1
+        else:
+            return ((255 - s2) / (255 - r2)) * (p - r2) + s2
+
+    pixel_val_vec = np.vectorize(pixel_val)
+    return pixel_val_vec(image).astype(np.uint8)
+
+def intensity_level_slicing(image, min_range, max_range, high_val=255, low_val=0):
+    sliced_image = np.where((image >= min_range) & (image <= max_range), high_val, low_val)
+    return sliced_image.astype(np.uint8)
+
+def bit_plane_slicing(image, bit):
+    return np.bitwise_and(image, 1 << bit).astype(np.uint8) * 255
+
+# Load the example image
+image_path = r"C:\Users\shris\Downloads\high_contrast_image.jpeg"
+image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+
+# Apply transformations
+contrast_image = contrast_stretching(image, 70, 0, 140, 255)
+sliced_image = intensity_level_slicing(image, 100, 200)
+bit_plane_image = bit_plane_slicing(image, 3)
+
+# Display the results
+plt.figure(figsize=(16, 6))
+plt.subplot(141), plt.imshow(image, cmap='gray'), plt.title('Original Image')
+plt.subplot(142), plt.imshow(contrast_image, cmap='gray'), plt.title('Contrast Stretched Image')
+plt.subplot(143), plt.imshow(sliced_image, cmap='gray'), plt.title('Intensity Level Sliced Image')
+plt.subplot(144), plt.imshow(bit_plane_image, cmap='gray'), plt.title('Bit-plane Sliced Image (Bit 3)')
+plt.show()
