@@ -1,10 +1,10 @@
-# Image Processing Exercises Manual
+# 🖼️ Image Processing and Computer Vision Techniques
 
 This repository contains a comprehensive set of exercises focused on various image processing techniques. Each exercise covers specific tasks, from basic manipulations to advanced image processing and 3D vision techniques.
 
 ---
 
-## Table of Contents
+## 📑 Table of Contents
 1. [Exercise 1: Basic Image Processing Techniques](#EX-1)
 2. [Exercise 2: Advanced Image Manipulation Operations](#EX-2)
 3. [Exercise 3: Image Enhancement Techniques](#EX-3)
@@ -19,7 +19,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 1: Basic Image Processing Techniques
+### 🖌️ Exercise 1: Basic Image Processing Techniques
 **Aim:** Perform various basic image processing techniques, including matrix representation, RGB channel manipulation, and image transformations like cropping and rotating.
 
 **Tasks:**
@@ -30,7 +30,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 2: Advanced Image Manipulation Operations
+### ✨ Exercise 2: Advanced Image Manipulation Operations
 **Aim:** Implement advanced image manipulations, including bitwise operations, interpolation, blurring, and edge detection.
 
 **Tasks:**
@@ -41,7 +41,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 3: Image Enhancement Techniques
+### 🌟 Exercise 3: Image Enhancement Techniques
 **Aim:** Apply image enhancement techniques like brightness and contrast adjustment, sharpening, and thresholding.
 
 **Tasks:**
@@ -51,7 +51,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 4: Histogram Processing
+### 📊 Exercise 4: Histogram Processing
 **Aim:** Enhance images through histogram processing, including equalization and matching.
 
 **Tasks:**
@@ -61,7 +61,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 5: Intensity Transformation Operations
+### 🎚️ Exercise 5: Intensity Transformation Operations
 **Aim:** Apply intensity transformation operations like image negatives, log, power-law, and piecewise transformations.
 
 **Tasks:**
@@ -70,7 +70,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 6: Image Restoration Techniques
+### 🛠️ Exercise 6: Image Restoration Techniques
 **Aim:** Implement Fourier-based image restoration techniques, including various filtering methods.
 
 **Tasks:**
@@ -79,7 +79,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 7: Image Segmentation Techniques
+### 🔍 Exercise 7: Image Segmentation Techniques
 **Aim:** Segment images using morphological operations and region-based methods.
 
 **Tasks:**
@@ -89,7 +89,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 8: 3D Vision Techniques
+### 📷 Exercise 8: 3D Vision Techniques
 **Aim:** Apply 3D vision techniques, including camera calibration and disparity calculation.
 
 **Tasks:**
@@ -99,7 +99,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 9: Structure from Motion Techniques
+### 🏗️ Exercise 9: Structure from Motion Techniques
 **Aim:** Use structure from motion techniques for 3D vision, including bundle adjustment and parametric motion.
 
 **Tasks:**
@@ -108,7 +108,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 10: Real-Time Applications - Document Image Analysis and Video Tracking
+### 🎥 Exercise 10: Real-Time Applications - Document Image Analysis and Video Tracking
 **Aim:** Implement real-time applications for document analysis and object tracking in video feeds.
 
 **Tasks:**
@@ -117,7 +117,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-### Exercise 11: Real-Time Applications - Object Recognition and Content-Based Image Retrieval
+### 🔍 Exercise 11: Real-Time Applications - Object Recognition and Content-Based Image Retrieval
 **Aim:** Use deep learning for real-time object recognition and content-based image retrieval.
 
 **Tasks:**
@@ -126,7 +126,7 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 1. Install required software: **Anaconda**.
 2. Use `pip install` to get necessary libraries (e.g., `numpy`, `matplotlib`, `opencv-python`).
@@ -134,10 +134,10 @@ This repository contains a comprehensive set of exercises focused on various ima
 
 ---
 
-## License
+## 📜 License
 This repository is for educational purposes. Please follow the instructor's guidelines and university policies regarding code use and distribution.
 
 ---
 
-## Author
+## 👤 Author
 This manual and code repository were created to assist students in mastering image processing techniques for academic purposes.
